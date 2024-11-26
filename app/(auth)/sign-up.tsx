@@ -1,14 +1,15 @@
-import CustomButton from '@/components/CustomButton';
-import InputField from '@/components/InputField';
-import { icons, images } from '@/constants';
-import { useState } from 'react';
-import { Image, ScrollView, Text, View } from 'react-native';
+import CustomButton from "@/components/CustomButton";
+import InputField from "@/components/InputField";
+import { icons, images } from "@/constants";
+import { Link } from "expo-router";
+import { useState } from "react";
+import { Image, ScrollView, Text, View } from "react-native";
 
 const SignUp = () => {
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
 
   const onSignUpPress = async () => {
@@ -55,6 +56,18 @@ const SignUp = () => {
             onPress={onSignUpPress}
             className="mt-6"
           />
+
+          {/* OAuth */}
+
+          <Link
+            href="/sign-in"
+            className="text-lg text-center text-general-200 mt-10"
+          >
+            <Text>Already have an account? </Text>
+            <Text className="text-primary-500">Log In</Text>
+          </Link>
+
+          {/* Verification Modal */}
         </View>
       </View>
     </ScrollView>
